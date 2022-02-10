@@ -1,10 +1,3 @@
-buildscript {
-	ext {
-		queryDslVersion = "5.0.0"
-	}
-}
-
-
 plugins {
 	id 'org.springframework.boot' version '2.6.3'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
@@ -32,13 +25,21 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
 
 	// QueryDSL
-	implementation 'com.querydsl:querydsl-jpa:${queryDslVersion}'
-	implementation 'com.querydsl:querydsl-apt:${queryDslVersion}'
+	implementation 'com.querydsl:querydsl-jpa:5.0.0'
+	implementation 'com.querydsl:querydsl-apt:5.0.0'
 
 	// Flyway
 	implementation 'org.flywaydb:flyway-core:6.4.2'
+
+	// JWT
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+
+	// Webclient
+	// This part is a dependency for M1 MacBook users, so it needs to be modified if necessary
+	implementation group: 'io.netty', name: 'netty-resolver-dns-native-macos', version: '4.1.72.Final', classifier: 'osx-aarch_64'
 
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'mysql:mysql-connector-java'
