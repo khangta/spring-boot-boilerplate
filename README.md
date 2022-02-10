@@ -6,3 +6,9 @@
 - Gradle
 
 ## Feature
+- QueryDSL
+- Webclient
+- Redis
+- Interceptor for authentication
+- ArgumentResolver for current user
+- Custom Exception for business rule
