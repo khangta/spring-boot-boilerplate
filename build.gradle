@@ -34,8 +34,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
 	// QueryDSL
-	implementation "com.querydsl:querydsl-jpa:${queryDslVersion}"
-	implementation "com.querydsl:querydsl-apt:${queryDslVersion}"
+	implementation 'com.querydsl:querydsl-jpa:${queryDslVersion}'
+	implementation 'com.querydsl:querydsl-apt:${queryDslVersion}'
+
+	// Flyway
+	implementation 'org.flywaydb:flyway-core:6.4.2'
 
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'mysql:mysql-connector-java'
